@@ -1,0 +1,1132 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "acountAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isEmployee_",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isEmployer_",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isMiddleman_",
+						"type": "bool"
+					}
+				],
+				"name": "accountCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "applicant",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "employer",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "numOfCandidates",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amountToStake",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isSealed",
+								"type": "bool"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct ChainLance.OfferedWork",
+						"name": "offeredWork",
+						"type": "tuple"
+					}
+				],
+				"name": "appliedToWork",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "employer",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "employee",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "middleman",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amountForEmployee",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "askedMiddlemanNumber",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "employeeDone",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "employerValidate",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "disputeRaised",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "resolveCheck",
+								"type": "bool"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct ChainLance.Agreement",
+						"name": "agreement",
+						"type": "tuple"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "middleman",
+						"type": "address"
+					}
+				],
+				"name": "askedMiddleman",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "employee",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "employer",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "employee",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "middleman",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amountForEmployee",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "askedMiddlemanNumber",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "employeeDone",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "employerValidate",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "disputeRaised",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "resolveCheck",
+								"type": "bool"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct ChainLance.Agreement",
+						"name": "agreement",
+						"type": "tuple"
+					}
+				],
+				"name": "disputeRaised",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "employer",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "employee",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "middleman",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amountForEmployee",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "askedMiddlemanNumber",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "employeeDone",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "employerValidate",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "disputeRaised",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "resolveCheck",
+								"type": "bool"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct ChainLance.Agreement",
+						"name": "agreement",
+						"type": "tuple"
+					}
+				],
+				"name": "disputeResolved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "employeeDone",
+						"type": "bool"
+					}
+				],
+				"name": "employeeDone",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "employerValidated",
+						"type": "bool"
+					}
+				],
+				"name": "employerValidated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "employer",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "employee",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "middleman",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amountForEmployee",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "askedMiddlemanNumber",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "employeeDone",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "employerValidate",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "disputeRaised",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "resolveCheck",
+								"type": "bool"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct ChainLance.Agreement",
+						"name": "agreement",
+						"type": "tuple"
+					}
+				],
+				"name": "middlemanValidated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "employee",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "employer",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "employee",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "middleman",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amountForEmployee",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "askedMiddlemanNumber",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "employeeDone",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "employerValidate",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "disputeRaised",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "resolveCheck",
+								"type": "bool"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct ChainLance.Agreement",
+						"name": "agreement",
+						"type": "tuple"
+					}
+				],
+				"name": "reqruitedEmployee",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "suggested",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "middleman",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "employer",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "employee",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "middleman",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amountForEmployee",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "askedMiddlemanNumber",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "employeeDone",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "employerValidate",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "disputeRaised",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "resolveCheck",
+								"type": "bool"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct ChainLance.Agreement",
+						"name": "agreement",
+						"type": "tuple"
+					}
+				],
+				"name": "suggestedMiddleman",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "employer",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "numOfCandidates",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amountToStake",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isSealed",
+								"type": "bool"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct ChainLance.OfferedWork",
+						"name": "offeredWork",
+						"type": "tuple"
+					}
+				],
+				"name": "workDeleted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "offeredBy",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "employer",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "numOfCandidates",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amountToStake",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isSealed",
+								"type": "bool"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct ChainLance.OfferedWork",
+						"name": "offeredWork",
+						"type": "tuple"
+					}
+				],
+				"name": "workOffered",
+				"type": "event"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "AIaddress",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "agreements",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "employer",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "employee",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "middleman",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountForEmployee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "askedMiddlemanNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "employeeDone",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "employerValidate",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "disputeRaised",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "resolveCheck",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "which_",
+						"type": "uint256"
+					}
+				],
+				"name": "applyOfferedWork",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "balanceRecieved",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "which_",
+						"type": "uint256"
+					}
+				],
+				"name": "deleteWork",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "address_",
+						"type": "address"
+					}
+				],
+				"name": "getAccount",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "isEmployer",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "isEmployee",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "isMiddleman",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "registered",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct ChainLance.Account",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "which_",
+						"type": "uint256"
+					}
+				],
+				"name": "getAgreement",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "employer",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "employee",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "middleman",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amountForEmployee",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "askedMiddlemanNumber",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "employeeDone",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "employerValidate",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "disputeRaised",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "resolveCheck",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct ChainLance.Agreement",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "whichAgreement_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "whichMiddleman_",
+						"type": "uint256"
+					}
+				],
+				"name": "getAskedMiddleman",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "offeredWorkNumber_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "candidateNumber_",
+						"type": "uint256"
+					}
+				],
+				"name": "getCandidates",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "whichAgreement_",
+						"type": "uint256"
+					}
+				],
+				"name": "getMiddleman",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "whichAgreement_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "whichMiddleman_",
+						"type": "uint256"
+					}
+				],
+				"name": "middleManValidate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "isEmployee_",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isEmployer_",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isMiddleman_",
+						"type": "bool"
+					}
+				],
+				"name": "newAccount",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "numOfAgreements",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "numOfOfferedWorks",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "offerWork",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "offeredWorks",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "employer",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "numOfCandidates",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountToStake",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isSealed",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "whichAgreement_",
+						"type": "uint256"
+					}
+				],
+				"name": "raiseDispute",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "whichOffer_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "whichCandidate_",
+						"type": "uint256"
+					}
+				],
+				"name": "reqruitEmployee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "whichAgreement_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "beneficiary",
+						"type": "address"
+					}
+				],
+				"name": "resolveDispluteAI",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "whichAgreement_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "employeePercent",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "employerPercent",
+						"type": "uint256"
+					}
+				],
+				"name": "resolveDispluteMiddleman",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "whichAgreement_",
+						"type": "uint256"
+					}
+				],
+				"name": "setEmployeeDone",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "whichAgreement_",
+						"type": "uint256"
+					}
+				],
+				"name": "setEmployerValidate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "whichAgreement_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "middleman_",
+						"type": "address"
+					}
+				],
+				"name": "suggestMiddleman",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Contracts/Hackathon.sol": "ChainLance"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Contracts/Hackathon.sol": {
+			"keccak256": "0x407894bd7bc42cccd2afa0f3b904d7af9d7f1b23a198591f48340ebb87d05e09",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ba29d548a65c7a4c26522c5a0a54a77b9566766d7c6688bd657aa04d782e121d",
+				"dweb:/ipfs/QmSYQyP2uDckbJC9E4jabKspot1BXEwmDFYzJnhLiv5hqp"
+			]
+		}
+	},
+	"version": 1
+}

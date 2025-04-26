@@ -1,0 +1,69 @@
+{
+	"id": "bad58946fd4710b6675ae7522ac8c086",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.26",
+	"solcLongVersion": "0.8.26+commit.8a97fa7a",
+	"input": {
+		"language": "Solidity",
+		"settings": {
+			"optimizer": {
+				"enabled": true,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		},
+		"sources": {
+			"Contracts/AIAPI.sol": {
+				"content": "//SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n/*\r\ncontract FreelanceArbitration {\r\n    address public client;\r\n    address public developer;\r\n    uint public stakeAmount;\r\n    bool public disputeRaised = false;\r\n    address public aiVerifier;  // Bu adres GPT API sonucunu gönderen backend olacak\r\n\r\n    constructor(address _developer, address _aiVerifier) payable {\r\n        client = msg.sender;\r\n        developer = _developer;\r\n        stakeAmount = msg.value;  // Müşteri ödeme yapar\r\n        aiVerifier = _aiVerifier;  // Backend sunucunun cüzdan adresi\r\n    }\r\n\r\n    function raiseDispute() public {\r\n        require(msg.sender == client || msg.sender == developer, \"Yetkiniz yok.\");\r\n        disputeRaised = true;\r\n        // GPT API değerlendirmesi yapılacak\r\n    }\r\n\r\n    // Backend, GPT API sonucunu gönderir\r\n    function resolveDispute(uint similarityScore) public {\r\n        require(msg.sender == aiVerifier, \"Sadece AI doğrulayıcı sonuç gönderebilir.\");\r\n        require(disputeRaised, \"Anlaşmazlık yok.\");\r\n\r\n        if (similarityScore >= 70) {\r\n            payable(developer).transfer(stakeAmount);\r\n        } else {\r\n            payable(client).transfer(stakeAmount);\r\n        }\r\n        disputeRaised = false;\r\n    }\r\n}*/"
+			}
+		}
+	},
+	"output": {
+		"sources": {
+			"Contracts/AIAPI.sol": {
+				"ast": {
+					"absolutePath": "Contracts/AIAPI.sol",
+					"exportedSymbols": {},
+					"id": 2,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".0"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "32:23:0"
+						}
+					],
+					"src": "32:1239:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}
